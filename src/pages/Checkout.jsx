@@ -107,7 +107,7 @@ const Checkout = () => {
                                         <TabsContent value="card" className="pt-4">
                                             <div className="space-y-4">
                                                 <div className="flex items-center space-x-4 mb-4">
-                                                    <img src="https://i.imgur.com/O61K3a9.png" alt="GIM-UEMOA" className="h-8" />
+                                                    <img src="./public/images/gimuemoa.png" srcset="" alt="GIM-UEMOA" className="h-8" />
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-8" />
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard" className="h-8" />
                                                 </div>
