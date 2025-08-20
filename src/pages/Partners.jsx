@@ -87,7 +87,7 @@
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
                                 {category.logos.map(logo => (
                                     <div key={logo.name} className="flex justify-center">
-                                        <img  class="h-12 lg:h-16 w-auto object-contain" alt={`Logo ${logo.name}`} src="https://images.unsplash.com/photo-1649000808933-1f4aac7cad9a" />
+                                    <img class="h-12 lg:h-16 w-auto object-contain" alt={`Logo ${logo.name}`} src="./public\images\orange-logo.png" />
                                     </div>
                                 ))}
                             </div>
