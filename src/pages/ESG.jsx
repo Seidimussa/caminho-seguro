@@ -145,7 +145,7 @@
                   </p>
                   <div className="mt-8">
                     <button onClick={() => alert("🚧 Funcionalidade ainda não implementada!")} className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-100">
-                      Baixar Relatório 2024
+                      Baixar Relatório 2025
                     </button>
                   </div>
                 </motion.div>

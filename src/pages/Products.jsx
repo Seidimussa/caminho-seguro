@@ -153,7 +153,7 @@ import React, { useState } from 'react';
                           <img  className="w-full h-56 object-cover" alt={product.imageAlt} src="https://images.unsplash.com/photo-1635865165118-917ed9e20936" />
                           {product.originalPrice && (
                             <Badge variant="destructive" className="absolute top-3 right-3">
-                              OFERTA
+                              PROMOÇÃO
                             </Badge>
                           )}
                         </div>

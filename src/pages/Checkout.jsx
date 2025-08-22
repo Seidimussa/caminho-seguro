@@ -20,9 +20,9 @@ const Checkout = () => {
     const [orderPlaced, setOrderPlaced] = useState(false);
 
     const otherPaymentMethods = [
-        { id: 'paypal', name: 'PayPal', icon: 'https://i.imgur.com/2motiva.png' },
-        { id: 'orange-money', name: 'Orange Money', icon: 'https://i.imgur.com/uI8Jd6s.png' },
-        { id: 'mobile-money', name: 'Mobile Money (Telecel)', icon: 'https://i.imgur.com/n1pGz2Z.png' },
+        { id: 'paypal', name: 'PayPal', icon: '../public/images/paypal-icon.svg' },
+        { id: 'orange-money', name: 'Orange Money', icon: '../public/images/orange-money.svg' },
+        { id: 'mobile-money', name: 'Mobile Money (Telecel)', icon: '../public/images/MoMo-Telecel.svg' },
     ];
     
     const handleOtherPaymentSelect = (id) => {
@@ -80,17 +80,17 @@ const Checkout = () => {
     return (
         <>
             <Helmet>
-                <title>Checkout - Projeto Caminho Seguro</title>
-                <meta name="description" content="Finalize sua compra de forma segura." />
+            <title>Checkout - Projeto Caminho Seguro</title>
+            <meta name="description" content="Finalize sua compra de forma segura." />
             </Helmet>
             <div className="bg-gray-50 min-h-screen">
-                <div className="container mx-auto px-4 py-12">
-                    <h1 className="text-4xl font-bold text-center mb-8">Finalizar Compra</h1>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5 }}
+            <div className="container mx-auto px-4 py-12">
+                <h1 className="text-4xl font-bold text-center mb-8">Finalizar Compra</h1>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition
                             className="lg:col-span-2"
                         >
                             <Card>
@@ -107,7 +107,7 @@ const Checkout = () => {
                                         <TabsContent value="card" className="pt-4">
                                             <div className="space-y-4">
                                                 <div className="flex items-center space-x-4 mb-4">
-                                                    <img src="./public/images/gimuemoa.png" srcset="" alt="GIM-UEMOA" className="h-8" />
+                                                    <img src="../public\images\gim_uemoa-logo.svg" srcset="" alt="GIM-UEMOA" className="h-8" />
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-8" />
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard" className="h-8" />
                                                 </div>
