@@ -66,7 +66,7 @@
                         <div>
                           <h3 className="text-lg font-semibold">Email</h3>
                           <p className="text-gray-600">Para dúvidas gerais e suporte.</p>
-                          <a href="mailto:contato@caminhoseguro.com" className="text-primary hover:underline">contato@caminhoseguro.com</a>
+                          <a href="mailto:projetocaminhoseguro@gmail.com" className="text-primary hover:underline">mailto:projetocaminhoseguro@gmail.com</a>
                         </div>
                       </div>
                       <div className="flex items-start gap-4">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Shield } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, Shield } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
@@ -8,6 +8,7 @@ const Footer = () => {
     { icon: Twitter, href: '#', name: 'Twitter' },
     { icon: Instagram, href: '#', name: 'Instagram' },
     { icon: Linkedin, href: '#', name: 'LinkedIn' },
+    { icon: Youtube, href: '#', name: 'YouTube' },
   ];
 
   const quickLinks = [
@@ -78,7 +79,7 @@ const Footer = () => {
             <div className="space-y-4">
                <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                <a href="mailto:contato@caminhoseguro.com" className="text-gray-400 hover:text-white text-sm">contato@caminhoseguro.com</a>
+                <a href="mailto:projetocaminhoseguro@gmail.com" className="text-gray-400 hover:text-white text-sm">projetocaminhoseguro@gmail.com</a>
               </div>
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
