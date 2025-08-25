@@ -77,7 +77,7 @@
                           Conheça o Produto <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>
                       </Button>
-                      <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
+                      <Button asChild size="lg" variant="outline" className="border-white text-blue-600 hover:bg-white hover:text-gray-900">
                         <Link to="/sobre">
                           Nossa Missão
                         </Link>
@@ -241,7 +241,7 @@
                          <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
                              <Link to="/produtos">Ver Produtos</Link>
                          </Button>
-                         <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                         <Button asChild size="lg" variant="outline" className="border-white text-blue-600 hover:bg-white/10">
                              <Link to="/contato">Fale Conosco</Link>
                          </Button>
                     </div>
