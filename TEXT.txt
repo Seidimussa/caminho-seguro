@@ -1,0 +1,12 @@
+Plano de Ação Profissional
+Instalar Novas Dependências: Precisaremos de dois novos pacotes: gridfs-stream e multer-gridfs-storage.
+Modificar a Conexão da Base de Dados: A nossa lógica de conexão precisa de ser ligeiramente ajustada para suportar o GridFS.
+Atualizar o Middleware de Upload: Substituiremos o multer-storage-cloudinary pelo multer-gridfs-storage.
+Criar uma Rota para Servir os Ficheiros: Ao contrário do Cloudinary, que nos dá um URL público, com o GridFS nós precisamos de criar um endpoint no nosso backend para que o frontend possa "pedir" e exibir as imagens.
+Passo 1: Instalar as Novas Dependências
+Vá para o terminal na sua pasta /backend.
+Execute o seguinte comando:
+code
+Bash
+
+npm install gridfs-stream multer-gridfs-storage

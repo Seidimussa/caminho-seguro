@@ -9,22 +9,46 @@ import { Link } from 'react-router-dom';
 const About = () => {
   const teamMembers = [
     {
-      name: "Engenheira. Mussa Seidi",
-      role: "CEO & Portador de Projeto",
-      bio: "Engenheiro visionário com paixão por tecnologia assistiva e Gestor de Projeto: Responsável pela visão estratégica, parcerias e gestão geral..",
-      image: "Retrato profissional de uma homem sorrindo em um escritório moderno"
+      name: "MUSSA SEIDI",
+      role: "CEO / Gestor de Projeto",
+      bio: "Liderança, visão estratégica e gestão de parcerias. Apaixonado por tecnologia assistiva e inclusão social.",
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758113133/mussa01_wseqkp_b_rgb_C2C9D6_iqbcrs.png"
     },
     {
-      name: "xxxxxxxx",
-      role: "Diretor de Tecnologia (CTO)",
-      bio: "Especialista em robótica e inteligência artificial, lidera o desenvolvimento da nossa tecnologia.",
-      image: "Retrato de um homem com óculos em frente a um quadro branco com diagramas"
+      name: "JOSÉ",
+      role: "Designer",
+      bio: "Responsável pelo design industrial do produto, ergonomia e experiência do utilizador (UX).",
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/jose_wqjwfo.jpg"
     },
     {
-      name: "Gabriela ",
-      role: "Diretora de Operações (COO)",
-      bio: "Gerencia a produção e a logística, garantindo a qualidade e eficiência dos nossos produtos.",
-      image: "Retrato de uma mulher em um ambiente de fábrica de alta tecnologia"
+      name: "GABRIELA",
+      role: "Comunicação e Marketing",
+      bio: "Gestão da marca, relações públicas e estratégia de entrada no mercado.",
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Gabriela_uveksn.jpg"
+    },
+    {
+      name: "ESMAEL",
+      role: "Equipa de Engenharia",
+      bio: "Multidisciplinar responsável pelo desenvolvimento de hardware, software embarcado, plataforma na nuvem e aplicação móvel.",
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Esmael_k2hn1c.jpg"
+    },
+    {
+      name: "VLADIMIR",
+      role: "Equipa de Engenharia",
+      bio: "Multidisciplinar responsável pelo desenvolvimento de hardware, software embarcado, plataforma na nuvem e aplicação móvel.",
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/vladimir_jiew7x.jpg"
+    },
+    {
+      name: "NAZARÉ",
+      role: "Equipa de Engenharia / Comunicação",
+      bio: "Multidisciplinar responsável pelo desenvolvimento de hardware, software embarcado, plataforma na nuvem e aplicação móvel.",
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Nazaree_h64tte.png"
+    },
+    {
+      name: "ERBIO",
+      role: "Equipa de Engenharia",
+      bio: "Multidisciplinar responsável pelo desenvolvimento de hardware, software embarcado, plataforma na nuvem e aplicação móvel.",
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Erbio_lkc0iy.jpg"
     }
   ];
 
@@ -159,7 +183,7 @@ const About = () => {
                 As mentes e os corações dedicados a tornar o Caminho Seguro uma realidade.
               </p>
             </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={member.name}
@@ -169,7 +193,7 @@ const About = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <img class="mx-auto h-40 w-40 rounded-full object-cover" src="./public\images\Perfil.pn" alt={member.name} src="/public\images\Perfil.png"/>
+                  <img className="mx-auto h-40 w-40 rounded-full object-cover" src={member.photo} alt={member.name} />
                   <h3 className="mt-6 text-xl font-semibold text-gray-900">{member.name}</h3>
                   <p className="text-primary font-medium">{member.role}</p>
                   <p className="mt-2 text-gray-600">{member.bio}</p>
