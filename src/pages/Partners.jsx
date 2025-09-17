@@ -13,31 +13,79 @@
             {
                 title: "Financiadores e Investidores",
                 description: "Agradecemos aos visionários que acreditam no nosso potencial e investem no futuro da acessibilidade.",
-                logos: [
-                    { name: "Fundação Gates", imageDesc: "Logo da Fundação Bill e Melinda Gates" },
-                    { name: "União Africana", imageDesc: "Logo da União Africana" },
-                    { name: "Banco Mundial", imageDesc: "Logo do Banco Mundial" },
-                    { name: "Impact Ventures", imageDesc: "Logo de uma empresa fictícia de capital de risco chamada Impact Ventures" }
+                partners: [
+                    { 
+                        name: "Fundação Gates", 
+                        logo: "/images/partners/gates-foundation.png",
+                        website: "https://www.gatesfoundation.org"
+                    },
+                    { 
+                        name: "União Africana", 
+                        logo: "/images/partners/african-union.png",
+                        website: "https://au.int"
+                    },
+                    { 
+                        name: "Banco Mundial", 
+                        logo: "/images/partners/world-bank.png",
+                        website: "https://www.worldbank.org"
+                    },
+                    { 
+                        name: "Impact Ventures", 
+                        logo: "/images/partners/impact-ventures.png",
+                        website: "#"
+                    }
                 ]
             },
             {
                 title: "Parceiros Tecnológicos",
                 description: "Colaboramos com líderes da indústria para integrar a melhor tecnologia em nossos produtos.",
-                logos: [
-                    { name: "NVIDIA", imageDesc: "Logo da NVIDIA" },
-                    { name: "Google Maps Platform", imageDesc: "Logo do Google Maps Platform" },
-                    { name: "Bosch", imageDesc: "Logo da Bosch (para sensores)" },
-                    { name: "OpenStreetMap", imageDesc: "Logo do OpenStreetMap" }
+                partners: [
+                    { 
+                        name: "NVIDIA", 
+                        logo: "/images/partners/nvidia.png",
+                        website: "https://www.nvidia.com"
+                    },
+                    { 
+                        name: "Google Maps Platform", 
+                        logo: "/images/partners/google-maps.png",
+                        website: "https://developers.google.com/maps"
+                    },
+                    { 
+                        name: "Bosch", 
+                        logo: "/images/partners/bosch.png",
+                        website: "https://www.bosch.com"
+                    },
+                    { 
+                        name: "OpenStreetMap", 
+                        logo: "/images/partners/openstreetmap.png",
+                        website: "https://www.openstreetmap.org"
+                    }
                 ]
             },
             {
                 title: "Organizações Não-Governamentais",
                 description: "Trabalhamos com ONGs para garantir que nossos produtos cheguem a quem mais precisa.",
-                logos: [
-                    { name: "Organização Mundial da Saúde", imageDesc: "Logo da OMS" },
-                    { name: "Visão Mundial", imageDesc: "Logo da Visão Mundial (World Vision)" },
-                    { name: "Handicap International", imageDesc: "Logo da Handicap International" },
-                    { name: "CBM", imageDesc: "Logo da CBM (Christian Blind Mission)" }
+                partners: [
+                    { 
+                        name: "Organização Mundial da Saúde", 
+                        logo: "/images/partners/who.png",
+                        website: "https://www.who.int"
+                    },
+                    { 
+                        name: "Visão Mundial", 
+                        logo: "/images/partners/world-vision.png",
+                        website: "https://www.worldvision.org"
+                    },
+                    { 
+                        name: "Handicap International", 
+                        logo: "/images/partners/handicap-international.png",
+                        website: "https://www.hi.org"
+                    },
+                    { 
+                        name: "CBM", 
+                        logo: "/images/partners/cbm.png",
+                        website: "https://www.cbm.org"
+                    }
                 ]
             }
         ];
@@ -84,11 +132,39 @@
                                 <h2 className="text-3xl font-bold tracking-tight text-gray-900">{category.title}</h2>
                                 <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">{category.description}</p>
                             </div>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-                                {category.logos.map(logo => (
-                                    <div key={logo.name} className="flex justify-center">
-                                    <img class="h-12 lg:h-16 w-auto object-contain" alt={`Logo ${logo.name}`} src="./public\images\orange-logo.png" />
-                                    </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {category.partners.map((partner, partnerIndex) => (
+                                    <motion.div 
+                                        key={partner.name}
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.4, delay: partnerIndex * 0.1 }}
+                                        viewport={{ once: true }}
+                                        className="group"
+                                    >
+                                        <Card className="h-32 hover:shadow-lg transition-all duration-300 border-gray-200 hover:border-primary/30">
+                                            <CardContent className="flex items-center justify-center h-full p-6">
+                                                <a 
+                                                    href={partner.website} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="block w-full h-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+                                                >
+                                                    <img 
+                                                        className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" 
+                                                        src={partner.logo} 
+                                                        alt={`Logo ${partner.name}`}
+                                                        onError={(e) => {
+                                                            e.target.src = '/images/placeholder-logo.png';
+                                                        }}
+                                                    />
+                                                </a>
+                                            </CardContent>
+                                        </Card>
+                                        <p className="text-center text-sm text-gray-600 mt-2 group-hover:text-primary transition-colors duration-300">
+                                            {partner.name}
+                                        </p>
+                                    </motion.div>
                                 ))}
                             </div>
                         </motion.section>

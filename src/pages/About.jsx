@@ -169,34 +169,59 @@ const About = () => {
           </div>
         </section>
 
-        <section className="py-20 sm:py-28">
+        <section className="py-20 sm:py-28 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-20"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Conheça a Nossa Equipa</h2>
-              <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Conheça a Nossa <span className="text-primary">Equipa</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 As mentes e os corações dedicados a tornar o Caminho Seguro uma realidade.
               </p>
             </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={member.name}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100"
                 >
-                  <img className="mx-auto h-40 w-40 rounded-full object-cover" src={member.photo} alt={member.name} />
-                  <h3 className="mt-6 text-xl font-semibold text-gray-900">{member.name}</h3>
-                  <p className="text-primary font-medium">{member.role}</p>
-                  <p className="mt-2 text-gray-600">{member.bio}</p>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="relative p-8 text-center">
+                    <div className="relative mb-6">
+                      <div className="absolute inset-0 bg-primary/10 rounded-full blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                      <img 
+                        className="relative mx-auto h-32 w-32 rounded-full object-cover border-4 border-white shadow-lg group-hover:border-primary/20 transition-all duration-300" 
+                        src={member.photo} 
+                        alt={member.name} 
+                      />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                      {member.name}
+                    </h3>
+                    
+                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                      {member.role}
+                    </div>
+                    
+                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {member.bio}
+                    </p>
+                  </div>
+                  
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </motion.div>
               ))}
             </div>
@@ -215,7 +240,7 @@ const About = () => {
               <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-200">
                 <Link to="/produtos">Nossos Produtos</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="border-white text-blue hover:bg-white/10">
                 <Link to="/parceiros">Seja um Parceiro</Link>
               </Button>
             </div>
