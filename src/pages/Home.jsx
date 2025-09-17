@@ -92,7 +92,7 @@
                     className="relative flex justify-center items-center"
                   >
                     <div className="animate-float">
-                      <img  alt="Bengala inteligente Caminho Seguro flutuando com um brilho tecnológico" class="w-full max-w-sm md:max-w-md rounded-lg shadow-2xl" src="https://images.unsplash.com/photo-1689116915232-7d8c53431afe" />
+                      <img alt="Bengala inteligente Caminho Seguro flutuando com um brilho tecnológico" class="w-full max-w-sm md:max-w-md rounded-lg shadow-2xl" src="https://res.cloudinary.com/djjkgp7yl/image/upload/v1758118092/BengalaInteligente_f6h6gg.png" />
                     </div>
                   </motion.div>
                 </div>
