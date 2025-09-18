@@ -16,22 +16,22 @@
                 partners: [
                     { 
                         name: "Fundação Gates", 
-                        logo: "/images/partners/gates-foundation.png",
+                    logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.gatesfoundation.org"
                     },
                     { 
                         name: "União Africana", 
-                        logo: "/images/partners/african-union.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://au.int"
                     },
                     { 
                         name: "Banco Mundial", 
-                        logo: "/images/partners/world-bank.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.worldbank.org"
                     },
                     { 
                         name: "Impact Ventures", 
-                        logo: "/images/partners/impact-ventures.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "#"
                     }
                 ]
@@ -42,22 +42,22 @@
                 partners: [
                     { 
                         name: "NVIDIA", 
-                        logo: "/images/partners/nvidia.png",
+                    logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.nvidia.com"
                     },
                     { 
                         name: "Google Maps Platform", 
-                        logo: "/images/partners/google-maps.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://developers.google.com/maps"
                     },
                     { 
                         name: "Bosch", 
-                        logo: "/images/partners/bosch.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.bosch.com"
                     },
                     { 
                         name: "OpenStreetMap", 
-                        logo: "/images/partners/openstreetmap.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.openstreetmap.org"
                     }
                 ]
@@ -68,22 +68,22 @@
                 partners: [
                     { 
                         name: "Organização Mundial da Saúde", 
-                        logo: "/images/partners/who.png",
+                    logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.who.int"
                     },
                     { 
                         name: "Visão Mundial", 
-                        logo: "/images/partners/world-vision.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.worldvision.org"
                     },
                     { 
                         name: "Handicap International", 
-                        logo: "/images/partners/handicap-international.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.hi.org"
                     },
                     { 
                         name: "CBM", 
-                        logo: "/images/partners/cbm.png",
+                      logo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758187032/orange-logo_b2fddi.png",
                         website: "https://www.cbm.org"
                     }
                 ]
