@@ -33,7 +33,6 @@ const About = () => {
       photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758113133/mussa01_wseqkp_b_rgb_C2C9D6_iqbcrs.png",
       social: {
         linkedin: "https://www.linkedin.com/in/mussa-seidi-645876223",
-        twitter: "https://twitter.com/mussa_seidi",
         facebook: "https://facebook.com/mussa.seide",
         github: "https://github.com/seidimussa",
         whatsapp: "https://wa.me/258123456789"
