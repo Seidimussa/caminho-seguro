@@ -2,9 +2,27 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Users, Target, Globe, Heart, Lightbulb, Shield } from 'lucide-react';
+import { Users, Target, Globe, Heart, Lightbulb, Shield, Linkedin, Twitter, Instagram, Mail, Facebook, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+
+const TikTokIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+  </svg>
+);
+
+const WhatsAppIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+  </svg>
+);
+
+const TelegramIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+  </svg>
+);
 
 const About = () => {
   const teamMembers = [
@@ -12,43 +30,81 @@ const About = () => {
       name: "MUSSA SEIDI",
       role: "CEO / Gestor de Projeto",
       bio: "Liderança, visão estratégica e gestão de parcerias. Apaixonado por tecnologia assistiva e inclusão social.",
-      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758113133/mussa01_wseqkp_b_rgb_C2C9D6_iqbcrs.png"
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758113133/mussa01_wseqkp_b_rgb_C2C9D6_iqbcrs.png",
+      social: {
+        linkedin: "https://www.linkedin.com/in/mussa-seidi-645876223",
+        twitter: "https://twitter.com/mussa_seidi",
+        facebook: "https://facebook.com/mussa.seide",
+        github: "https://github.com/seidimussa",
+        whatsapp: "https://wa.me/258123456789"
+        
+      }
     },
     {
       name: "JOSÉ",
       role: "Designer",
       bio: "Responsável pelo design industrial do produto, ergonomia e experiência do utilizador (UX).",
-      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/jose_wqjwfo.jpg"
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/jose_wqjwfo.jpg",
+      social: {
+        linkedin: "https://linkedin.com/in/jose-designer",
+        instagram: "https://instagram.com/jose_design",
+        facebook: "https://facebook.com/jose.designer",
+        tiktok: "https://tiktok.com/@jose_design"
+      }
     },
     {
       name: "GABRIELA",
       role: "Comunicação e Marketing",
       bio: "Gestão da marca, relações públicas e estratégia de entrada no mercado.",
-      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Gabriela_uveksn.jpg"
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Gabriela_uveksn.jpg",
+      social: {
+        linkedin: "https://linkedin.com/in/gabriela-marketing",
+        twitter: "https://twitter.com/gabriela_mkt",
+        facebook: "https://facebook.com/gabriela.marketing",
+        telegram: "https://t.me/gabriela_mkt"
+      }
     },
     {
       name: "ESMAEL",
       role: "Equipa de Engenharia",
       bio: "Multidisciplinar responsável pelo desenvolvimento de hardware, software embarcado, plataforma na nuvem e aplicação móvel.",
-      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Esmael_k2hn1c.jpg"
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Esmael_k2hn1c.jpg",
+      social: {
+        linkedin: "https://linkedin.com/in/esmael-eng",
+        github: "https://github.com/esmael-dev",
+        email: "mailto:esmael@caminhoseguro.com"
+      }
     },
     {
       name: "VLADIMIR",
       role: "Equipa de Engenharia",
       bio: "Multidisciplinar responsável pelo desenvolvimento de hardware, software embarcado, plataforma na nuvem e aplicação móvel.",
-      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/vladimir_jiew7x.jpg"
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/vladimir_jiew7x.jpg",
+      social: {
+        linkedin: "https://linkedin.com/in/vladimir-eng",
+        twitter: "https://twitter.com/vladimir_dev",
+        github: "https://github.com/vladimir-dev"
+      }
     },
     {
       name: "NAZARÉ",
       role: "Equipa de Engenharia / Comunicação",
       bio: "Multidisciplinar responsável pelo desenvolvimento de hardware, software embarcado, plataforma na nuvem e aplicação móvel.",
-      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Nazaree_h64tte.png"
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Nazaree_h64tte.png",
+      social: {
+        linkedin: "https://linkedin.com/in/nazare-eng",
+        instagram: "https://instagram.com/nazare_tech"
+      }
     },
     {
       name: "ERBIO",
       role: "Equipa de Engenharia",
       bio: "Multidisciplinar responsável pelo desenvolvimento de hardware, software embarcado, plataforma na nuvem e aplicação móvel.",
-      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Erbio_lkc0iy.jpg"
+      photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/Erbio_lkc0iy.jpg",
+      social: {
+        linkedin: "https://linkedin.com/in/erbio-eng",
+        email: "mailto:erbio@caminhoseguro.com"
+      }
     }
   ];
 
@@ -216,9 +272,100 @@ const About = () => {
                       {member.role}
                     </div>
                     
-                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300 mb-6">
                       {member.bio}
                     </p>
+                    
+                    <div className="flex justify-center space-x-3">
+                      {member.social.linkedin && (
+                        <a 
+                          href={member.social.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-gray-100 hover:bg-blue-600 text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <Linkedin className="h-4 w-4" />
+                        </a>
+                      )}
+                      {member.social.twitter && (
+                        <a 
+                          href={member.social.twitter} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-gray-100 hover:bg-blue-400 text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <Twitter className="h-4 w-4" />
+                        </a>
+                      )}
+                      {member.social.instagram && (
+                        <a 
+                          href={member.social.instagram} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-gray-100 hover:bg-pink-500 text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <Instagram className="h-4 w-4" />
+                        </a>
+                      )}
+                      {member.social.facebook && (
+                        <a 
+                          href={member.social.facebook} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-gray-100 hover:bg-blue-700 text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <Facebook className="h-4 w-4" />
+                        </a>
+                      )}
+                      {member.social.github && (
+                        <a 
+                          href={member.social.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-gray-100 hover:bg-gray-800 text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <Github className="h-4 w-4" />
+                        </a>
+                      )}
+                      {member.social.tiktok && (
+                        <a 
+                          href={member.social.tiktok} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-gray-100 hover:bg-black text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <TikTokIcon className="h-4 w-4" />
+                        </a>
+                      )}
+                      {member.social.whatsapp && (
+                        <a 
+                          href={member.social.whatsapp} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-gray-100 hover:bg-green-600 text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <WhatsAppIcon className="h-4 w-4" />
+                        </a>
+                      )}
+                      {member.social.telegram && (
+                        <a 
+                          href={member.social.telegram} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-gray-100 hover:bg-blue-500 text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <TelegramIcon className="h-4 w-4" />
+                        </a>
+                      )}
+                      {member.social.email && (
+                        <a 
+                          href={member.social.email}
+                          className="p-2 rounded-full bg-gray-100 hover:bg-green-500 text-gray-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                        >
+                          <Mail className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                   
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />

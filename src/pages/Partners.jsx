@@ -151,7 +151,7 @@
                                                     className="block w-full h-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
                                                 >
                                                     <img 
-                                                        className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" 
+                                                        className="max-h-16 max-w-full object-contain transition-all duration-300" 
                                                         src={partner.logo} 
                                                         alt={`Logo ${partner.name}`}
                                                         onError={(e) => {
