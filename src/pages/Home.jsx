@@ -6,6 +6,8 @@
     import { ArrowRight, Eye, Navigation, Smartphone, Shield, Award, Users } from 'lucide-react';
     import { Button } from '@/components/ui/button';
     import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+    import ImpactCounter from '@/components/impact/ImpactCounter';
+    import ImpactStories from '@/components/impact/ImpactStories';
 
     const Home = () => {
       const features = [
@@ -185,6 +187,9 @@
               </div>
             </section>
 
+            {/* Impact Counter */}
+            <ImpactCounter />
+
             <section className="py-20 lg:py-28 bg-gray-50">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
@@ -229,6 +234,9 @@
                 </div>
               </div>
             </section>
+
+            {/* Impact Stories */}
+            <ImpactStories />
 
             <section className="py-20 lg:py-24 bg-primary text-primary-foreground">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

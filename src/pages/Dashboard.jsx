@@ -13,11 +13,38 @@ import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
 import { DashboardCard } from '@/components/ui/dashboard-card';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import PersonalizedRecommendations from '@/components/recommendations/PersonalizedRecommendations';
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
   const [dashboardData, setDashboardData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const getWelcomeMessage = (user) => {
+    if (!user) return 'Bem-vindo!';
+    
+    switch (user.userType) {
+      case 'institutional':
+        return `Bem-vinda, ${user.name}!`;
+      case 'caregiver':
+        return `Olá, ${user.name}!`;
+      default:
+        return `Bem-vindo, ${user.name}!`;
+    }
+  };
+
+  const getPersonalizedMessage = (user) => {
+    if (!user) return 'Aqui está um resumo das suas atividades hoje.';
+    
+    switch (user.userType) {
+      case 'institutional':
+        return 'Gerencie seus dispositivos e acompanhe o impacto na comunidade.';
+      case 'caregiver':
+        return 'Monitore o progresso e garanta a segurança dos seus entes queridos.';
+      default:
+        return 'Acompanhe seu progresso rumo à maior autonomia e segurança.';
+    }
+  };
 
   useEffect(() => {
     fetchDashboardData();
@@ -75,10 +102,10 @@ const Dashboard = () => {
           className="bg-gradient-to-r from-primary to-primary/80 rounded-xl p-8 text-white"
         >
           <h1 className="text-3xl font-bold mb-2">
-            Bem-vindo, {user?.name}!
+            {getWelcomeMessage(user)}
           </h1>
           <p className="text-primary-foreground/80">
-            Aqui está um resumo das suas atividades hoje.
+            {getPersonalizedMessage(user)}
           </p>
         </motion.div>
 
@@ -124,6 +151,9 @@ const Dashboard = () => {
             />
           )}
         </div>
+
+        {/* Personalized Recommendations */}
+        <PersonalizedRecommendations user={user} />
 
         {/* Recent Activities & Alerts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

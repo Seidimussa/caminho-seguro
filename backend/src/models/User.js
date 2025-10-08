@@ -39,6 +39,47 @@ const userSchema = new mongoose.Schema({
     enum: ['super-admin', 'admin', 'funcionario', 'cliente'],
     default: 'cliente'
   },
+  userType: {
+    type: String,
+    enum: ['individual', 'institutional', 'caregiver'],
+    default: 'individual'
+  },
+  profile: {
+    // B2C Primary Users
+    visualImpairment: {
+      type: String,
+      enum: ['blind', 'low-vision', 'none'],
+      default: 'none'
+    },
+    mobilityLevel: {
+      type: String,
+      enum: ['high', 'medium', 'low'],
+      default: 'high'
+    },
+    ageGroup: {
+      type: String,
+      enum: ['young', 'adult', 'senior'],
+      default: 'adult'
+    },
+    // B2B/B2G Institutional
+    institutionType: {
+      type: String,
+      enum: ['ngo', 'association', 'rehabilitation-center', 'government', 'healthcare', 'other']
+    },
+    volumePurchase: {
+      type: Boolean,
+      default: false
+    },
+    // Caregiver/Family
+    relationshipType: {
+      type: String,
+      enum: ['family', 'professional-caregiver', 'friend', 'other']
+    },
+    primaryConcerns: [{
+      type: String,
+      enum: ['fall-prevention', 'independence', 'confidence', 'navigation', 'safety']
+    }]
+  },
   permissions: {
     dashboard: { type: Boolean, default: false },
     users: {
