@@ -29,6 +29,7 @@
         { name: 'Início', path: '/' },
         { name: 'Sobre', path: '/sobre' },
         { name: 'Produtos', path: '/produtos' },
+        { name: 'Inclusão', path: '/inclusao' },
         { name: 'ESG', path: '/esg' },
         { name: 'Parceiros', path: '/parceiros' },
         { name: 'Contato', path: '/contato' },

@@ -1,6 +1,7 @@
 const express = require('express');
 const { ImpactCounter, Story } = require('../models/ImpactCounter');
 const { protect } = require('../middleware/auth');
+const DonationCalculator = require('../utils/donationCalculator');
 
 const router = express.Router();
 
@@ -46,14 +47,15 @@ router.put('/counter', protect, async (req, res) => {
       return res.status(403).json({ success: false, message: 'Acesso negado' });
     }
 
-    const { totalSold, totalDonated } = req.body;
+    const { totalSold } = req.body;
+    const calculatedData = DonationCalculator.updateDonationCounter(totalSold);
     
     let counter = await ImpactCounter.findOne();
     if (!counter) {
-      counter = await ImpactCounter.create({ totalSold, totalDonated });
+      counter = await ImpactCounter.create(calculatedData);
     } else {
-      counter.totalSold = totalSold;
-      counter.totalDonated = totalDonated;
+      counter.totalSold = calculatedData.totalSold;
+      counter.totalDonated = calculatedData.totalDonated;
       counter.lastUpdated = new Date();
       await counter.save();
     }

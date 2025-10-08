@@ -23,6 +23,8 @@ import Contact from '@/pages/Contact';
 import PrivacyPolicy from '@/pages/PrivacyPolicy';
 import TermsOfUse from '@/pages/TermsOfUse';
 import FAQ from '@/pages/FAQ';
+import Inclusao from '@/pages/Inclusao';
+import AccessibilityWidget from '@/components/accessibility/AccessibilityWidget';
 
 function App() {
   return (
@@ -51,9 +53,11 @@ function App() {
                 <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
                 <Route path="/termos-de-uso" element={<TermsOfUse />} />
                 <Route path="/faq" element={<FAQ />} />
+                <Route path="/inclusao" element={<Inclusao />} />
               </Routes>
             </main>
             <Footer />
+            <AccessibilityWidget />
             <Toaster />
           </div>
         </Router>
