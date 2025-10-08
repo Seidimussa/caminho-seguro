@@ -31,17 +31,17 @@ const Inclusao = () => {
     {
       title: "Programa de Doações",
       description: "Para cada 100 bengalas vendidas, doamos 1 para instituições de apoio.",
-      impact: "500+ bengalas doadas"
+      impact: "0 bengalas doadas"
     },
     {
       title: "Treinamento Gratuito",
       description: "Oferecemos workshops sobre mobilidade e tecnologia assistiva.",
-      impact: "2000+ pessoas treinadas"
+      impact: "0 pessoas treinadas"
     },
     {
       title: "Parcerias Institucionais",
       description: "Colaboramos com ONGs e centros de reabilitação.",
-      impact: "50+ parcerias ativas"
+      impact: "0 parcerias ativas"
     }
   ];
 
