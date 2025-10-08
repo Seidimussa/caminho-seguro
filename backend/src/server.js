@@ -74,6 +74,8 @@ app.use('/api/products', require('./routes/products'));
 app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/reports', require('./routes/reports'));
 app.use('/api/system', require('./routes/system'));
+app.use('/api/impact', require('./routes/impact'));
+app.use('/api/segmentation', require('./routes/segmentation'));
 
 // Health check
 app.get('/health', (req, res) => {
