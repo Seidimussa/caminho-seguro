@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Users, Target, Globe, Heart, Lightbulb, Shield, Linkedin, Twitter, Instagram, Mail, Facebook, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { useImagePreloader } from '@/components/ui/image-preloader';
 import { Link } from 'react-router-dom';
 
 const TikTokIcon = ({ className }) => (
@@ -114,6 +116,10 @@ const About = () => {
     { icon: Users, title: 'Inclusão', description: 'Acreditamos em um mundo onde todos têm as mesmas oportunidades.' }
   ];
 
+  // Preload team member images
+  const teamImages = teamMembers.map(member => member.photo);
+  useImagePreloader(teamImages, true);
+
   return (
     <>
       <Helmet>
@@ -157,7 +163,13 @@ const About = () => {
                   Capacitar pessoas com deficiência visual a navegar pelo mundo com confiança, segurança e independência, através do desenvolvimento e comercialização de tecnologia assistiva de ponta.
                 </p>
                 <div className="mt-6 flex max-w-md gap-x-4">
-                  <img alt="Uma pessoa com deficiência visual usando a bengala inteligente para atravessar uma rua movimentada com segurança." class="w-full h-auto rounded-lg shadow-lg" src="https://images.unsplash.com/photo-1625708974337-fb8fe9af5711" />
+                  <OptimizedImage 
+                    src="https://images.unsplash.com/photo-1625708974337-fb8fe9af5711"
+                    alt="Uma pessoa com deficiência visual usando a bengala inteligente para atravessar uma rua movimentada com segurança."
+                    className="w-full rounded-lg shadow-lg"
+                    quality="85"
+                    placeholder="blur"
+                  />
                 </div>
               </motion.div>
               <motion.div
@@ -256,10 +268,14 @@ const About = () => {
                   <div className="relative p-8 text-center">
                     <div className="relative mb-6">
                       <div className="absolute inset-0 bg-primary/10 rounded-full blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                      <img 
-                        className="relative mx-auto h-32 w-32 rounded-full object-cover border-4 border-white shadow-lg group-hover:border-primary/20 transition-all duration-300" 
-                        src={member.photo} 
-                        alt={member.name} 
+                      <OptimizedImage 
+                        src={member.photo}
+                        alt={member.name}
+                        width={128}
+                        height={128}
+                        className="relative mx-auto rounded-full border-4 border-white shadow-lg group-hover:border-primary/20 transition-all duration-300"
+                        quality="80"
+                        placeholder="blur"
                       />
                     </div>
                     
