@@ -52,6 +52,10 @@ app.use('/api/team', require('./routes/team'));
 app.use('/api/partners', require('./routes/partners'));
 app.use('/api/media', require('./routes/media'));
 app.use('/api/preferences', require('./routes/preferences'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/sales', require('./routes/sales'));
+app.use('/api/revenue', require('./routes/revenue'));
+app.use('/api/dashboard', require('./routes/dashboard'));
 
 // Health check
 app.get('/health', (req, res) => {
