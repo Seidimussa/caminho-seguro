@@ -9,6 +9,12 @@ require('dotenv').config();
 
 const cacheMiddleware = require('./middleware/cache');
 const errorHandler = require('./middleware/errorHandler');
+const { requestLogger, errorLogger } = require('./middleware/logging');
+const { seedDatabase } = require('./utils/seedData');
+const monitoringService = require('./middleware/monitoring');
+const backupService = require('./services/backupService');
+const websocketService = require('./services/websocketService');
+const emailService = require('./services/emailService');
 
 const app = express();
 
@@ -29,6 +35,10 @@ const limiter = rateLimit({
 });
 app.use('/api/', limiter);
 
+// Monitoring and logging
+app.use(monitoringService.requestTracker());
+app.use(requestLogger);
+
 // Body parsing & cookies
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -43,7 +53,11 @@ app.use('/static', express.static('public', {
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('MongoDB Atlas connected'))
+  .then(async () => {
+    console.log('MongoDB Atlas connected');
+    // Seed database with initial data
+    await seedDatabase();
+  })
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
@@ -56,6 +70,10 @@ app.use('/api/users', require('./routes/users'));
 app.use('/api/sales', require('./routes/sales'));
 app.use('/api/revenue', require('./routes/revenue'));
 app.use('/api/dashboard', require('./routes/dashboard'));
+app.use('/api/products', require('./routes/products'));
+app.use('/api/notifications', require('./routes/notifications'));
+app.use('/api/reports', require('./routes/reports'));
+app.use('/api/system', require('./routes/system'));
 
 // Health check
 app.get('/health', (req, res) => {
@@ -63,9 +81,18 @@ app.get('/health', (req, res) => {
 });
 
 // Error handling
+app.use(errorLogger);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
   console.log(`Server running on port ${PORT}`);
+  
+  // Initialize WebSocket
+  websocketService.initialize(server);
+  
+  // Start backup scheduler
+  backupService.scheduleBackups();
+  
+  console.log('All services initialized successfully');
 });
