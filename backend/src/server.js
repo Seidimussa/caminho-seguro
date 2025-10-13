@@ -12,8 +12,8 @@ const errorHandler = require('./middleware/errorHandler');
 const { requestLogger, errorLogger } = require('./middleware/logging');
 const { seedDatabase } = require('./utils/seedData');
 const monitoringService = require('./middleware/monitoring');
-const backupService = require('./services/backupService');
-const websocketService = require('./services/websocketService');
+// const backupService = require('./services/backupService');
+// const websocketService = require('./services/websocketService');
 const emailService = require('./services/emailService');
 
 const app = express();
@@ -86,15 +86,12 @@ app.get('/health', (req, res) => {
 app.use(errorLogger);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-const server = app.listen(PORT, async () => {
-  console.log(`Server running on port ${PORT}`);
-  
-  // Initialize WebSocket
-  websocketService.initialize(server);
-  
-  // Start backup scheduler
-  backupService.scheduleBackups();
-  
-  console.log('All services initialized successfully');
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
