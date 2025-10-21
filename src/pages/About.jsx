@@ -50,10 +50,11 @@ const About = () => {
       bio: "Responsável pelo design industrial do produto, ergonomia e experiência do utilizador (UX).",
       photo: "https://res.cloudinary.com/djjkgp7yl/image/upload/v1758112885/jose_wqjwfo.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/jose-designer",
-        instagram: "https://instagram.com/jose_design",
-        facebook: "https://facebook.com/jose.designer",
-        tiktok: "https://tiktok.com/@jose_design"
+        linkedin: "https://www.linkedin.com/in/josekombabondi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagram: "https://www.instagram.com/_justme_jb?igsh=ampmYmFkM3cxazhx",
+        facebook: "https://www.facebook.com/share/16Lc9muVUN/",
+        tiktok: "https://www.tiktok.com/@jos3_bondi?_t=ZM-90jhgpMSBiO&_r=1",
+        whatsapp: "https://wa.me/245956998915"
       }
     },
     {
