@@ -38,7 +38,9 @@ const About = () => {
         facebook: "https://facebook.com/mussa.seide",
         github: "https://github.com/seidimussa",
         whatsapp: "https://wa.me/245955785768",
-        email: "mailto:sedja2015@gmail.com"
+        email: "mailto:sedja2015@gmail.com",
+        telegram: "https://t.me/@Seidimussa"
+      
         
       }
     },
