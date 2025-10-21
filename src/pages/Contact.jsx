@@ -66,7 +66,7 @@
                         <div>
                           <h3 className="text-lg font-semibold">Email</h3>
                           <p className="text-gray-600">Para dúvidas gerais e suporte.</p>
-                          <a href="mailto:projetocaminhoseguro@gmail.com" className="text-primary hover:underline">mailto:projetocaminhoseguro@gmail.com</a>
+                          <a href="mailto:projetocaminhoseguro@gmail.com" className="text-primary hover:underline">projetocaminhoseguro@gmail.com</a>
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
@@ -76,7 +76,7 @@
                         <div>
                           <h3 className="text-lg font-semibold">Telefone</h3>
                           <p className="text-gray-600">Disponível de Seg. a Sex. das 9h às 18h.</p>
-                          <p className="text-primary">+245 123 456 789</p>
+                          <p className="text-primary">+245 578 578 68</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
