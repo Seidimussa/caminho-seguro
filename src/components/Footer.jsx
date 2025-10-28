@@ -83,11 +83,11 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+245 95 578 57 68</span>
+                <span className="text-gray-400 text-sm">+245 95 578 57 68  /  +245 95 699 89 15</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                <span className="text-gray-400 text-sm">Bissau, Guiné-Bissau</span>
+                <span className="text-gray-400 text-sm"> ODC - Bissau, Guiné-Bissau</span>
               </div>
             </div>
           </div>
