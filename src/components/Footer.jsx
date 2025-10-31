@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, S
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Facebook, href: '#', name: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/61578873100153/', name: 'Facebook' },
     { icon: Twitter, href: '#', name: 'Twitter' },
     { icon: Instagram, href: '#', name: 'Instagram' },
     { icon: Linkedin, href: '#', name: 'LinkedIn' },
